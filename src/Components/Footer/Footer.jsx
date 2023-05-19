@@ -7,7 +7,7 @@ import logo from '../../assets/img/Logo.png'
 const Footer = () => {
   return (
     <footer className="bg-[#F5FDFF] py-10">
-  <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <div className="container px-3 md:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4">
   <div>
     <img src={logo} className='w-[145px]' alt="" /> 
     <p  className='font-Jost font-semibold mt-7 text-[#334447]'>We're passionate about providing high-quality toys that inspire imagination and foster learning</p>
