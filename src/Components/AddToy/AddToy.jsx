@@ -1,0 +1,109 @@
+import React, { useContext } from "react";
+import { themeContext } from "../../Firebase/AuthProvider";
+import Swal from 'sweetalert2'
+
+const AddToy = () => {
+
+    const {user} = useContext(themeContext)
+
+    const handleAddToy = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const picture = form.picture.value;
+        const price = form.price.value;
+        const ratings = form.ratings.value;
+        const category = form.category.value;
+        const shortDescription = form.desc.value;
+        const info = {category,name,picture,price,ratings,shortDescription,displayName: user.displayName}
+        
+        fetch("http://localhost:5000/add_toy",{
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(info)
+        })
+        .then(res =>res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  form.reset();
+            }else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'
+                  })
+            }
+        })
+
+    }
+
+
+  return (
+    <div className="py-12">
+      <div className="container mx-auto">
+        <form onSubmit={handleAddToy} className="w-full max-w-[600px] mx-auto">
+          
+            <input
+              type="text"
+              name="name"
+              placeholder="Doll Name"
+              className="input input-bordered w-full mb-4"
+            />
+
+            <select name="category" className="select w-full mb-4 select-bordered">
+              <option disabled>
+              Category
+              </option>
+              <option value="Baby Doll">Baby Doll</option>
+              <option defaultValue="Barbie Doll">Barbie Doll</option>
+              <option defaultValue="American Girl">American Girl</option>
+            </select>
+         
+
+         
+          <input
+              type="text"
+              name="picture"
+              placeholder="Photo Url"
+              className="input input-bordered w-full mb-4"
+            />
+       
+
+    
+            <input
+              type="text"
+              name="price"
+              placeholder="Price"
+              className="input input-bordered w-full mb-4"
+            />
+            <input
+              type="text"
+              name="ratings"
+              placeholder="Ratings"
+              className="input input-bordered w-full mb-4"
+            />
+
+   
+
+
+            <textarea name="desc" className="textarea textarea-bordered w-full mb-4" placeholder="Description"></textarea>
+
+            <div className="text-center mt-10">
+                <button className="text-white py-2 px-8 rounded-lg font-semibold font-Jost border border-primary bg-primary">Add Doll</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AddToy;

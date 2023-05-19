@@ -13,6 +13,10 @@ import Blog from './Components/Blog/Blog.jsx';
 import Home from './Pages/Home/Home.jsx';
 import AllToys from './Pages/AllToys/AllToys.jsx';
 import ToyDetails from './Components/ToyDetails/ToyDetails.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AddToy from './Components/AddToy/AddToy.jsx';
+import MyToy from './Components/MyToy/MyToy.jsx';
+import Update from './Components/MyToy/Update.jsx';
 
 
 
@@ -42,9 +46,21 @@ const router = createBrowserRouter([
         element: <AllToys></AllToys>
       },
       {
+        path: "/update/:id",
+        element: <Update></Update>
+      },
+      {
         path: "/toy_details/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
         loader: (({params}) => fetch(`http://localhost:5000/details/${params.id}`))
+      },
+      {
+        path: "/add_toy",
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+      },
+      {
+        path: "/my_toy",
+        element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
       }
     ]
   },

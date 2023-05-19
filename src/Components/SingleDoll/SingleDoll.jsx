@@ -15,7 +15,7 @@ const SingleDoll = ({item}) => {
             <p className='font-Jost font-semibold'>ratings: {ratings}</p>
          </div>
          <div className='text-right mt-12'>
-            <NavLink to={`/toy_details/${_id}`} className="text-white py-2 px-8 rounded-lg font-semibold font-Jost border border-primary bg-primary  ">View Details</NavLink>
+            <NavLink to={`/toy_details/${_id}`} className="text-white py-2 px-8 rounded-lg font-semibold font-Jost border border-primary bg-primary">View Details</NavLink>
          </div>
     </div>
   )
