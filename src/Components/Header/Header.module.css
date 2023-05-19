@@ -26,3 +26,9 @@
     display: block;
     margin-bottom: 10px;
 }
+.extra{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+}

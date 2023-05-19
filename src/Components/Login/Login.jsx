@@ -79,7 +79,7 @@ const Login = () => {
                         <input name="password" id='password' className='border outline-0 py-2 px-2 rounded-lg w-full block focus:border-gray-400' type="password" />
                     </div>
                     <div className='mb-4 text-center'>
-                        <button className='py-2 px-8 border-0 bg-rose-600 text-white font-semibold rounded-md hover:bg-rose-800'>{loader ? "Loading...":"Sign in" } </button>
+                        <button className='py-2 px-8 border-0 bg-primary text-white font-semibold rounded-md'>{loader ? "Loading...":"Sign in" } </button>
                     </div>
                 </form>
                 <div className='flex items-center my-6 gap-3'>
@@ -92,7 +92,7 @@ const Login = () => {
                     <FaGoogle onClick={handleGoogle} className='text-3xl hover:cursor-pointer' />
                 </div>
                 <div className='my-4 text-right'>
-                    <span className='text-lg font-medium'>Are you new here? <Link className='text-rose-600 hover:underline' to="/register">Please Sing up</Link></span>
+                    <span className='text-lg font-medium'>Are you new here? <Link className='text-rose-600 hover:underline' to="/register">Please Register</Link></span>
                 </div>
             </div>
         </div>
