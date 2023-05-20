@@ -53,7 +53,7 @@ const AddToy = () => {
   return (
     <div className="py-12">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-Bubblegum text-black mb-5 text-center">Add a New Toy</h2>
+        <h2 className="text-4xl font-Bubblegum text-primary mb-5 text-center">Add a New Toy</h2>
         <form onSubmit={handleAddToy} className="w-full max-w-[600px] mx-auto">
           
             <input
