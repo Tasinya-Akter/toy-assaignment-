@@ -8,7 +8,7 @@ const Update = () => {
     const Navigate = useNavigate();
     
     useEffect(() => {
-        fetch(`http://localhost:5000/update/${id}`)
+        fetch(`https://toy-server-pearl.vercel.app/update/${id}`)
         .then(res => res.json())
         .then(result => setInfo(result))
     },[])
