@@ -25,7 +25,6 @@ const AllToys = () => {
         return  item.name.includes(form.search.value);
       })
       setToys(data)
-      console.log(data)
       form.reset();
     }else {
       setMyFresh(!myFresh);
