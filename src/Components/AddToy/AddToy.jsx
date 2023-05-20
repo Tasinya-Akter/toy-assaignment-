@@ -12,7 +12,7 @@ const AddToy = () => {
         const form = e.target;
         const name = form.name.value;
         const picture = form.picture.value;
-        const price = form.price.value;
+        const price = parseFloat(form.price.value).toFixed(2);
         const ratings = form.ratings.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
@@ -28,11 +28,12 @@ const AddToy = () => {
         })
         .then(res =>res.json())
         .then(data => {
+          console.log(data)
             if(data.insertedId){
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Your work has been saved',
+                    title: 'Toy added successfully',
                     showConfirmButton: false,
                     timer: 1500
                   })
