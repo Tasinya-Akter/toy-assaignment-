@@ -17,6 +17,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import AddToy from './Components/AddToy/AddToy.jsx';
 import MyToy from './Components/MyToy/MyToy.jsx';
 import Update from './Components/MyToy/Update.jsx';
+import Error from './Components/Error/Error.jsx';
 
 
 
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "*",
+    element: <Error></Error>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
