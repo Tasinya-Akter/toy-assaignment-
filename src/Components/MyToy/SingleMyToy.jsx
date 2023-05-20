@@ -66,6 +66,9 @@ const handleDelete = (id) => {
             <HiTrash onClick={()=>handleDelete(_id)} className='text-red-500 cursor-pointer text-2xl' />
           </div>
         </th>
+        <td>
+          <Link to={`/toy_details/${_id}`} className='py-2 px-5 font-Bubblegum rounded-lg text-white bg-primary'>Details</Link>
+        </td>
       </tr>
   )
 }

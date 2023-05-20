@@ -23,7 +23,7 @@ const DollTab = () => {
     <div className='py-12'>
         <div className="container mx-auto px-3 md:px-0">
           <div>
-            <h3 className='font-Bubblegum text-3xl text-center mb-6'>Tab Section</h3>
+            <h3 className='font-Bubblegum text-3xl text-center mb-6'>Shop by category</h3>
           </div>
         <div className="py-4">
           <Tabs>

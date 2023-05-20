@@ -1,0 +1,8 @@
+.bg {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(#000000b0,#00000098),url('https://i.ibb.co/rwxY3dV/french-food-assortment-on-dark-260nw-2059316678.png') no-repeat center /cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

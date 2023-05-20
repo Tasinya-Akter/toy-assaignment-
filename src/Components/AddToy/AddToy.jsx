@@ -14,9 +14,10 @@ const AddToy = () => {
         const price = form.price.value;
         const ratings = form.ratings.value;
         const category = form.category.value;
+        const quantity = form.quantity.value;
         const shortDescription = form.desc.value;
-        const info = {category,name,picture,price,ratings,shortDescription,displayName: user.displayName}
-        
+        const info = {category,quantity,name,picture,price,ratings,shortDescription,displayName: user.displayName,email:user.email}
+        // console.log(info)
         fetch("http://localhost:5000/add_toy",{
             method: "POST",
             headers: {
@@ -50,6 +51,7 @@ const AddToy = () => {
   return (
     <div className="py-12">
       <div className="container mx-auto">
+        <h2 className="text-4xl font-Bubblegum text-black mb-5 text-center">Add a New Toy</h2>
         <form onSubmit={handleAddToy} className="w-full max-w-[600px] mx-auto">
           
             <input
@@ -85,6 +87,14 @@ const AddToy = () => {
               placeholder="Price"
               className="input input-bordered w-full mb-4"
             />
+
+            <input
+              type="text"
+              name="quantity"
+              placeholder="Available Quantity"
+              className="input input-bordered w-full mb-4"
+            />
+
             <input
               type="text"
               name="ratings"

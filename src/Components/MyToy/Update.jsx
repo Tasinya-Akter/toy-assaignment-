@@ -23,7 +23,6 @@ const Update = () => {
         const shortDescription = form.desc.value;
         const ratings = form.ratings.value;
         const myInfo = {name,price,shortDescription,ratings}
-        console.log(myInfo)
         fetch(`http://localhost:5000/update/${id}`,{
             method: "PUT",
             headers: {
