@@ -20,9 +20,15 @@ const MyToy = () => {
       <div className={style.bg}>
         <h2 className='text-center font-Bubblegum text-white text-3xl'>Toy Details</h2>
       </div>
+
     <div className='py-14'>
         <div className="container mx-auto">
-            
+            <div className='text-right mb-6'>
+            <select className="select select-bordered w-full max-w-xs">
+                <option>Ascending</option>
+                <option>Descending </option>
+            </select>
+            </div>
             <div>
         <div className="overflow-x-auto w-full">
               <table className="table w-full">
