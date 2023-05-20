@@ -7,14 +7,14 @@ const DollTab = () => {
   const [toys, setToys] = useState([]);
 
   const handleCategory = (e) => {
-    const url = `http://localhost:5000/category/${e}`;
+    const url = `https://toy-server-pearl.vercel.app/category/${e}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setToys(data));
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/category/Baby Doll')
+    fetch('https://toy-server-pearl.vercel.app/category/Baby Doll')
       .then((res) => res.json())
       .then((data) => setToys(data));
   },[])

@@ -23,7 +23,7 @@ const Update = () => {
         const shortDescription = form.desc.value;
         const ratings = form.ratings.value;
         const myInfo = {name,price,shortDescription,ratings}
-        fetch(`http://localhost:5000/update/${id}`,{
+        fetch(`https://toy-server-pearl.vercel.app/update/${id}`,{
             method: "PUT",
             headers: {
                 "content-type":"application/json"

@@ -10,14 +10,14 @@ const MyToy = () => {
     const {user} = useContext(themeContext)
     const [allToy,setAllToy] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/specific_toy/?email=${user.email}&order=-1`)
+        fetch(`https://toy-server-pearl.vercel.app/specific_toy/?email=${user.email}&order=-1`)
         .then(res => res.json())
         .then(result => setAllToy(result))
     },[refresh])
 
     const handleOrder = (e) => {
       const val = e.target.value;
-      fetch(`http://localhost:5000/specific_toy/?email=${user.email}&order=${val}`)
+      fetch(`https://toy-server-pearl.vercel.app/specific_toy/?email=${user.email}&order=${val}`)
         .then(res => res.json())
         .then(result => setAllToy(result))
     }

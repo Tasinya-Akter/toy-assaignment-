@@ -7,7 +7,6 @@ const ToyDetails = () => {
     useTitle("Details")
     const my = useLoaderData();
     const {name,picture,ratings,price,category,shortDescription,quantity,displayName} = useLoaderData();
-    console.log(my)
 
 
   return (

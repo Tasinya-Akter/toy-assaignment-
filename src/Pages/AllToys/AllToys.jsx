@@ -8,7 +8,7 @@ const AllToys = () => {
   const [myFresh,setMyFresh] = useState(false)
   useTitle("All toys")
   useEffect(() => {
-    fetch("http://localhost:5000/all")
+    fetch("https://toy-server-pearl.vercel.app/all")
       .then((res) => res.json())
       .then((data) => {
         setCopy(data)

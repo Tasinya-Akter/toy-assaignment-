@@ -21,7 +21,7 @@ const handleDelete = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
 
-      fetch(`http://localhost:5000/delete/${id}`,{
+      fetch(`https://toy-server-pearl.vercel.app/delete/${id}`,{
         method: "DELETE"
       })
       .then(res => res.json())

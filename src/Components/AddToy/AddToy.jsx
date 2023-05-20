@@ -19,7 +19,7 @@ const AddToy = () => {
         const shortDescription = form.desc.value;
         const info = {category,quantity,name,picture,price,ratings,shortDescription,displayName: user.displayName,email:user.email}
         // console.log(info)
-        fetch("http://localhost:5000/add_toy",{
+        fetch("https://toy-server-pearl.vercel.app/add_toy",{
             method: "POST",
             headers: {
                 "content-type": "application/json"
