@@ -10,11 +10,17 @@ const MyToy = () => {
     const {user} = useContext(themeContext)
     const [allToy,setAllToy] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user.email}`)
+        fetch(`http://localhost:5000/specific_toy/?email=${user.email}&order=-1`)
         .then(res => res.json())
         .then(result => setAllToy(result))
     },[refresh])
 
+    const handleOrder = (e) => {
+      const val = e.target.value;
+      fetch(`http://localhost:5000/specific_toy/?email=${user.email}&order=${val}`)
+        .then(res => res.json())
+        .then(result => setAllToy(result))
+    }
   return (
     <div >
       <div className={style.bg}>
@@ -24,9 +30,9 @@ const MyToy = () => {
     <div className='py-14'>
         <div className="container mx-auto">
             <div className='text-right mb-6'>
-            <select className="select select-bordered w-full max-w-xs">
-                <option>Ascending</option>
-                <option>Descending </option>
+            <select onChange={handleOrder} className="select select-bordered w-full max-w-xs">
+                <option value="-1">Ascending</option>
+                <option value="1">Descending </option>
             </select>
             </div>
             <div>
