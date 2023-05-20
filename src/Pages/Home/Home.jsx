@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 import DollTab from './DollTab';
 import useTitle from '../../Hooks/useTitle';
 import Unleas from './Unleas';
+import Slider from './Slider';
 
 const Home = () => {
   useTitle("Home");
@@ -15,6 +16,7 @@ const Home = () => {
       <DollTab></DollTab>
       <Unleas></Unleas>
       <Gallery></Gallery>
+      <Slider></Slider>
     </div>
   )
 }
