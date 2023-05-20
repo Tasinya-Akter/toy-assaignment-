@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { themeContext } from "../../Firebase/AuthProvider";
 import Swal from 'sweetalert2'
+import useTitle from "../../Hooks/useTitle";
 
 const AddToy = () => {
-
+  useTitle("Add toy")
     const {user} = useContext(themeContext)
 
     const handleAddToy = (e) => {

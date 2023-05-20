@@ -1,8 +1,10 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import style from './ToyDetails.module.css';
+import useTitle from '../../Hooks/useTitle';
 
 const ToyDetails = () => {
+    useTitle("Details")
     const my = useLoaderData();
     const {name,picture,ratings,price,category,shortDescription,quantity,displayName} = useLoaderData();
     console.log(my)

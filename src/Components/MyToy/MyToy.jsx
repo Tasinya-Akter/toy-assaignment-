@@ -2,8 +2,10 @@ import React, { useContext,useState, useEffect } from 'react'
 import { themeContext } from '../../Firebase/AuthProvider'
 import SingleMyToy from './SingleMyToy';
 import style from './MyToy.module.css';
+import useTitle from '../../Hooks/useTitle';
 
 const MyToy = () => {
+  useTitle("My toys")
     const [refresh,setReFresh] = useState(true)
     const {user} = useContext(themeContext)
     const [allToy,setAllToy] = useState([])
