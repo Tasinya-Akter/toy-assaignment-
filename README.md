@@ -1,10 +1,11 @@
+![My Image](https://i.ibb.co/fntc2yk/Capture.png)
 ## Hi! there 
 ### This is a Toys E-commerce Website
 
 ## [Live Website Link](https://assignment11-d344a.web.app/)
 ## [https://assignment11-d344a.web.app/](https://assignment11-d344a.web.app/)
 
-![My Image](https://i.ibb.co/fntc2yk/Capture.png)
+
 
 ## Features
 - User can add new toy if she or he wants
