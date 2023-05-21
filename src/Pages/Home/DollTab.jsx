@@ -1,30 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import SingleDoll from '../../Components/SingleDoll/SingleDoll';
+import SingleDoll from "../../Components/SingleDoll/SingleDoll";
+import CircleLoader from "./../../Spinner/CircleLoader";
 
 const DollTab = () => {
   const [toys, setToys] = useState([]);
+  const [myLoader, setMyLoader] = useState(true);
 
   const handleCategory = (e) => {
+    setMyLoader(true);
     const url = `https://toy-server-pearl.vercel.app/category/${e}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setToys(data));
+      .then((data) => {
+        setMyLoader(false);
+        setToys(data);
+      });
   };
 
   useEffect(() => {
-    fetch('https://toy-server-pearl.vercel.app/category/Baby Doll')
+    fetch("https://toy-server-pearl.vercel.app/category/Baby Doll")
       .then((res) => res.json())
-      .then((data) => setToys(data));
-  },[])
+      .then((data) => {
+        setMyLoader(false);
+        setToys(data);
+      });
+  }, []);
 
   return (
-    <div className='py-12'>
-        <div className="container mx-auto px-3 md:px-0">
-          <div>
-            <h3 className='font-Bubblegum text-3xl text-center mb-6'>Shop by category</h3>
-          </div>
+    <div className="py-12">
+      <div className="container mx-auto px-3 md:px-0">
+        <div>
+          <h3 className="font-Bubblegum text-3xl text-center mb-6">
+            Shop by category
+          </h3>
+        </div>
         <div className="py-4">
           <Tabs>
             <TabList>
@@ -42,18 +53,22 @@ const DollTab = () => {
             <TabPanel></TabPanel>
           </Tabs>
 
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {toys &&
-          toys.map((item) => (
-            <SingleDoll item={item} key={item._id}></SingleDoll>
-          ))}
-      </div>
-
-
+          {myLoader ? (
+            <CircleLoader></CircleLoader>
+          ) : (
+            <>
+              <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                {toys &&
+                  toys.map((item) => (
+                    <SingleDoll item={item} key={item._id}></SingleDoll>
+                  ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DollTab
+export default DollTab;

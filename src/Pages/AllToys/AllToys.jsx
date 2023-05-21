@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import SingleDoll from "../../Components/SingleDoll/SingleDoll";
 import useTitle from "../../Hooks/useTitle";
+import Spinner from "../../Spinner/Spinner";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [copy,setCopy] = useState([]);
+  const [myLoader,setMyLoader] = useState(true);
   const [myFresh,setMyFresh] = useState(false)
   useTitle("All toys")
   useEffect(() => {
     fetch("https://toy-server-pearl.vercel.app/all")
       .then((res) => res.json())
       .then((data) => {
+        setMyLoader(false)
         setCopy(data)
         setToys(data)
       });
@@ -24,6 +27,7 @@ const AllToys = () => {
       const data = copy.filter((item) => {
         return  item.name.includes(form.search.value);
       })
+      setMyLoader(false)
       setToys(data)
       form.reset();
     }else {
@@ -33,6 +37,9 @@ const AllToys = () => {
     
   }
 
+  if(myLoader){
+    return <Spinner></Spinner>
+  }
 
   return (
     <div className="py-14 container mx-auto px-0 md:px-3">
