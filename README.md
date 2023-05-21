@@ -1,5 +1,6 @@
 ## Hi! there 
 ### This is a Toys E-commerce Website
+![My Image](https://i.ibb.co/fntc2yk/Capture.png)
 
 ## Features
 - User can add new toy if she or he wants
